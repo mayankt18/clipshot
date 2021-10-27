@@ -1,6 +1,6 @@
 import React from "react";
 import faker from "faker";
-import { useState, useEffect } from "react/cjs/react.development";
+import { useState, useEffect } from "react";
 
 function Suggestions() {
   const [suggestions, setSuggestions] = useState([]);
