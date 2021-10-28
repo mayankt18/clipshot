@@ -5,4 +5,7 @@ export const modalState = atom({
   default: false,
 });
 
-// for deploy
+export const menuState = atom({
+  key: "menuState",
+  default: false,
+});

@@ -97,7 +97,7 @@ function Post({ id, username, usrImg, img, caption }) {
   );
 
   return (
-    <div className="bg-white border rounded-sm my-7 w-11/12 mx-auto">
+    <div className="bg-white border rounded-sm my-7 sm:w-11/12 mx-auto">
       {/* header */}
       <div className="flex items-center p-5">
         <img
@@ -110,7 +110,12 @@ function Post({ id, username, usrImg, img, caption }) {
         <DotsHorizontalIcon className="h-5 cursor-pointer" />
       </div>
       {/* img */}
-      <img src={img} className="w-full object-contain" alt="" />
+      <img
+        src={img}
+        className="w-full object-contain"
+        onDoubleClick={session && likePost}
+        alt=""
+      />
 
       {/* button */}
       {session && (

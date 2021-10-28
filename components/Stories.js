@@ -22,7 +22,7 @@ function Stories() {
     <div
       className="flex space-x-2 p-6 bg-white border-gray-300 border
      mt-8 overflow-x-scroll scrollbar-thin scrollbar-thumb-gray-700 
-     mx-auto w-11/12"
+     mx-auto sm:w-11/12"
     >
       {session && (
         <Story

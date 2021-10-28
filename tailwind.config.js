@@ -5,6 +5,11 @@ module.exports = {
   theme: {
     extend: {},
   },
+  fontFamily: {
+    sans: ["Graphik", "sans-serif"],
+    serif: ["Merriweather", "serif"],
+    lobster: ["Lobster Two"],
+  },
   variants: {
     extend: {},
   },

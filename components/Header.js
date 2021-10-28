@@ -11,15 +11,25 @@ import { HomeIcon } from "@heroicons/react/solid";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useRecoilState } from "recoil";
-import { modalState } from "../atoms/modalAtom";
+import { modalState, menuState } from "../atoms/modalAtom";
+import { useState } from "react";
 
 function Header() {
   const { data: session } = useSession();
   const [open, setOpen] = useRecoilState(modalState);
   const router = useRouter();
+  const [menuOpen, setMenuOpen] = useRecoilState(menuState);
+
+  const setMenuStatus = () => {
+    if (menuOpen) {
+      setMenuOpen(false);
+    } else {
+      setMenuOpen(true);
+    }
+  };
 
   return (
-    <div className="shadow-sm bg-white border-b sticky top-0 z-50">
+    <div className="shadow-sm bg-white border-b top-0 z-40">
       <div className="flex justify-between max-w-6xl mx-5 lg:mx-auto">
         {/* <h1>This is the Header</h1> */}
 
@@ -65,7 +75,10 @@ function Header() {
           <HomeIcon className="navBtn" onClick={() => router.push("/")} />
           {session ? (
             <>
-              <MenuIcon className="h-12 md:hidden cursor-pointer" />
+              <MenuIcon
+                className="h-12 md:hidden cursor-pointer"
+                onClick={setMenuStatus}
+              />
               <div className="relative navBtn">
                 <PaperAirplaneIcon className="navBtn rotate-45" />
                 <div
