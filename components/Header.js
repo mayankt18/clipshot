@@ -29,7 +29,7 @@ function Header() {
   };
 
   return (
-    <div className="shadow-sm bg-white border-b top-0 z-40">
+    <div className="shadow-sm bg-white border-b top-0 z-40 sm:sticky">
       <div className="flex justify-between max-w-6xl mx-5 lg:mx-auto">
         {/* <h1>This is the Header</h1> */}
 
